@@ -1,5 +1,5 @@
-<h1>Cool tasklist</h1>
-<app-task *ngFor="let task of tasks" [task]="task" (refreshEvent)="refresh($event)" ></app-task>
+<h1>Very cool tasklist</h1>
+<app-task *ngFor="let task of tasks"  (refreshEvent)="refresh($event)" ></app-task>
 <p *ngIf="tasks === null || tasks.length === 0">
   No tasks have been added, please do so below.
 </p>

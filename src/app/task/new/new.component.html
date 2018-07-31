@@ -1,4 +1,4 @@
 
 <div>
-  <p>Task: <input type="text" [(ngModel)]="description"/><button (click)="save()">Add</button></p>
+  <p>Task: <input #taskCreator type="text" /><button (click)="save(taskCreator.value)">Add</button></p>
 </div>

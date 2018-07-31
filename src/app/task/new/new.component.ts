@@ -9,7 +9,6 @@ import {Task} from '../model/task.model';
 })
 export class NewComponent implements OnInit {
 
-  public description;
 
   @Output()
   private addEvent: EventEmitter<Task> = new EventEmitter();
@@ -19,14 +18,13 @@ export class NewComponent implements OnInit {
   ngOnInit() {
   }
 
-  public save(): void {
-    if (this.description) {
+  public save(value: string): void {
+    if (value) {
       const t = new Task();
-      t.description = this.description;
+      t.description = value;
       this.taskService.updateTask(t).subscribe((task: Task) => {
         console.log(task);
         this.addEvent.emit(task);
-        this.description = null;
       });
     }
   }
